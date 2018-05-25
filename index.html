@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>THE KING OF FIGTHERS</title>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <script type="text/javascript" src="src/Player.js"></script>
+    <script type="text/javascript" src="src/GameModel.js"></script>
+    <script type="text/javascript" src="src/Keyboard.js"></script>
+    <script type="text/javascript" src="src/Timer.js"></script>
+    <script type="text/javascript" src="src/Ui.js"></script>
+    <script type="text/javascript" src="src/Animation.js"></script>
+    <script type="text/javascript" src="src/AI.js"></script>
+    <script type="text/javascript" src="src/AIConfig.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+  <body ondragstart="return false" oncontextmenu="return false" style="background-color:#5d5d5d;">
+    <div id="game">
+      <div id="blood">
+        <div class="top-shadow"></div>
+        <div class="blood-show">
+          <div class="left"><p id="playerp0">100</p><div class="value"><div id="bldp0"></div></div></div>
+          <div class="right"><div class="value"><div id="bldp1"></div></div><p id="playerp1">100</p></div>
+        </div>
+        <div class="skill">
+          <div class="skl left">
+            <div class="sklb ske">
+              <div class="hidskill"><object id="p0eh" data="src/polygon.svg" type="image/svg+xml"></object></div>
+              <span class="valueshow" id="p0e">0</span>
+            </div>
+            <div class="sklb skr">
+              <div class="hidskill"><object id="p0rh" data="src/polygon.svg" type="image/svg+xml"></object></div>
+              <span class="valueshow" id="p0r">0</span>
+            </div>
+          </div>
+          <div class="skl right">
+            <div class="sklb skr">
+              <div class="hidskill"><object id="p1rh" data="src/polygon.svg" type="image/svg+xml"></object></div>
+              <span class="valueshow" id="p1r">0</span>
+            </div>
+            <div class="sklb ske">
+              <div class="hidskill"><object id="p1eh" data="src/polygon.svg" type="image/svg+xml"></object></div>
+              <span class="valueshow" id="p1e">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="p1" class="player">
+        <img id="p1start" src="images/blue.png" alt="电脑玩家"/>
+        <img id="p1body" src="images/body.png" data-acs="['normal','beattack','shelter']" data-acstatus="normal" data-actime="[1000,50,50]" data-ac="[['images/body.png'],['images/beattack.png'],['images/shelter.png']]" alt="玩家1的身体部分"/>
+        <img id="p1hand" src="images/hand.png" data-acs="['normal','attack']" data-acstatus="attack" data-actime="[1000,50]" data-ac="[['images/hand.png'],['images/attack1.png','images/attack2.png','images/attack1.png']]" alt="玩家1手部"/>
+        <img id="p1foot" src="images/foot0.png" data-acs="['move','normal']" data-acstatus="move" data-actime="[50,1000]" data-ac="[['images/foot1.png','images/foot2.png','images/foot1.png'],['images/foot0.png']]" alt="玩家1的脚部"/>
+      </div>
+      <div id="p0" class="player">
+        <img id="p0start" src="images/red.png" alt="人类玩家"/>
+        <img id="p0body" src="images/body.png" data-acs="['normal','beattack','shelter']" data-acstatus="normal" data-actime="[1000,50,50]" data-ac="[['images/body.png'],['images/beattack.png'],['images/shelter.png']]" alt="玩家0的身体部分"/>
+        <img id="p0hand" src="images/hand.png" data-acs="['normal','attack']" data-acstatus="attack" data-actime="[1000,50]" data-ac="[['images/hand.png'],['images/attack1.png','images/attack2.png','images/attack1.png']]" alt="玩家0手部"/>
+        <img id="p0foot" src="images/foot0.png" data-acs="['move','normal']" data-acstatus="move" data-actime="[50,1000]" data-ac="[['images/foot0.png','images/foot1.png','images/foot2.png','images/foot1.png'],['images/foot0.png']]" alt="玩家0的脚部"/>
+      </div>
+    </div>
+  </body>
+</html>

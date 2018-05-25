@@ -1,0 +1,112 @@
+/* 所有元素禁止选中 */
+* {moz-user-select:-moz-none;-moz-user-select:none;-o-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;margin:0px;padding:0px;border:0px solid #FFFFFF;}
+
+/* 隐藏页面的滚动条 */
+html body {overflow:hidden;}
+
+/* 游戏最外面的DIV */
+#game {background-color:#5d5d5d;width:500px;height:300px;display:none;}
+
+/* 游戏人物的div，在人物的脚底位置 */
+#game .player {position:absolute;}
+/* 游戏人物div里面的图片，用负定位往上面和左边挪，使得游戏人物的图片在人物div的上方正中间 */
+#game .player img {position:absolute;top:-236px;left:-56px}
+
+#debug {position:absolute;top:0px;left:0px;background-color:#000000;color:#ffffff;font-family:"宋体";min-width:10px;min-height:10px;}
+
+/* 游戏上面，显示血条和技能的块 */
+#blood {
+    position:absolute;
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    border:2px solid #a0a0a0;
+    border-top:0px solid #ff0000;
+    /* DIV圆角 */
+    border-radius:0px 0px 20px 20px;
+    width:800px;height:120px;
+    /* 背景颜色渐变 */
+    background:linear-gradient(to bottom, #bbbbbb, #828282);
+    /* DIV阴影 */
+    box-shadow:10px 10px 40px #252525;
+}
+
+/* 用来在顶部向下留一点阴影 */
+#blood .top-shadow {width:100%;height:0px;box-shadow:0px 0px 15px 3px #5d5d5d}
+
+/* 生命值数值显示和血条显示 */
+.blood-show .left,.blood-show .right {
+    margin:20px 0px 0px 0px;
+    width:50%;
+    height:30px;
+    background-color:#a5a5a5;
+    font-size:0px;line-height:0px;
+}
+.blood-show .left {
+    float:left;
+}
+.blood-show .right {
+    float:right;
+}
+/* 生命数值显示 */
+.blood-show .left p,.blood-show .right p {
+    margin:0px 0px 0px 0px;padding:0px;height:100%;width:50px;
+    text-align:center;
+    display:inline-block;
+    font-size:20px;
+    line-height:30px;
+    font-family:"Arial";
+    vertical-align:top;/* 使得inline-block的元素顶部对齐 */
+    text-shadow:#000000 1px 1px 2px;/* 字体阴影：颜色，x轴，y轴，模糊半径 */
+}
+/* 固定血条div */
+.blood-show .left .value,.blood-show .right .value {
+    margin:0px;padding:0px;height:100%;width:50px;
+    display:inline-block;
+}
+/* 血条div内，颜色和长度显示 */
+.value div {width:100%;height:100%;box-shadow:#000000 1px 1px 2px;}
+#bldp0 {float:right;background-color:red;}
+#bldp1 {float:left;background-color:blue;}
+
+/* 技能冷却槽，整行 */
+#blood .skill .left,#blood .skill .right {margin:10px 0px 0px 0px;}
+#blood .skill .left {margin-left:10px;display:inline-block;text-align:left;}
+#blood .skill .right {margin-right:10px;display:inline-block;text-align:right;}
+/* 技能块 */
+.left .sklb,.right .sklb {
+    display:inline-block;vertical-align:top;
+    margin:0px 5px 0px 5px;
+    width:30px;height:30px;
+    border-radius:50%;
+    border:1px solid #a0a0a0;
+    box-shadow:1px 1px 2px #333333;
+    background-position:50% 50%;
+}
+.ske {
+    background-image:url("images/ske.png");
+}
+.skr {
+    background-image:url("images/skr.png");
+}
+
+/* 冷却时背景被扇形遮挡 */
+.skl .hidskill {
+    position:absolute;
+    width:31px;height:31px;
+}
+
+/* 冷却时间显示span */
+.skl .valueshow {
+    position:absolute;
+    display:inline-block;
+    margin:0px;padding:0px;
+    width:30px;height:30px;
+    text-align:center;
+    font-size:14px;line-height:30px;
+    font-weight:700;
+    text-shadow:#ffffff 0px 0px 6px;
+}
+/* 修复右边的玩家冷却时间显示出现向右偏移 */
+.skill .right .sklb .valueshow {
+    margin-left:-30px;
+}
